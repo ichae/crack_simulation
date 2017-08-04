@@ -1,4 +1,3 @@
-# test
 #%%
 from skimage.draw import line
 import numpy as np
@@ -6,9 +5,9 @@ from numpy.random import randint
 import matplotlib.pyplot as plt
 
 img = np.zeros((150,150), dtype=np.uint8)
-r = randint(50,60 , size=1)
-c = randint(90,100 , size=1)
-s = randint(70,80 , size=1)
+r = randint(50,60 , size=1)[0]
+c = randint(90,100 , size=1)[0]
+s = randint(70,80 , size=1)[0]
 
 #%%
 tree = line(100,75,s,c)
@@ -26,12 +25,6 @@ for i in number:
     for k in range(2):
         d = randint(5,30 , size=1)[0]
         e = randint(5,30 , size=1)[0]
-    a = randint(5,30 , size=1)
-    b = randint(5,30 , size=1)
-    tree3 = line(s, c, s-a*i, c+b*i)
-    for k in range(2):
-        d = randint(5,30 , size=1)
-        e = randint(5,30 , size=1)
         tree4 = line(s-a*i, c+b*i,  s-a*i-d, c+b*i+e)
         img[tree3] = 1
         img[tree4] = 1
@@ -43,12 +36,6 @@ for i in number:
     for k in range(2):     
         d = randint(5,30 , size=1)[0]
         e = randint(5,30 , size=1)[0]
-    a = randint(5,30 , size=1)
-    b = randint(5,30 , size=1)
-    tree3 = line(s, r, s-a*i, r-b*i)
-    for k in range(2):     
-        d = randint(5,30 , size=1)
-        e = randint(5,30 , size=1)
         tree4 = line(s-a*i, r-b*i,  s-a*i-d, r-b*i-e)
         img[tree3] = 1
         img[tree4] = 1
@@ -58,3 +45,4 @@ for i in number:
 
 plt.imshow(img)
 plt.show()
+
