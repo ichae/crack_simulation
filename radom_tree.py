@@ -11,15 +11,21 @@ c = randint(90,100 , size=1)
 s = randint(70,80 , size=1)
 
 #%%
-tree = line(100, 75, s, c)
-tree2 = line(100, 75, s, r)
-rr, cc = line(149, 75, 100, 75)
-img[rr, cc] = 1
+tree = line(100,75,s,c)
+tree2 = line(100,75,s,r)
+rr,cc = line(149,75,100,75)
+img[rr,cc] = 1
 img[tree] = 1
 img[tree2] = 1
 
 number = [1,1]
 for i in number:
+    a = randint(5,30 , size=1)[0]
+    b = randint(5,30 , size=1)[0]
+    tree3 = line(s, c, s-a*i, c+b*i)
+    for k in range(2):
+        d = randint(5,30 , size=1)[0]
+        e = randint(5,30 , size=1)[0]
     a = randint(5,30 , size=1)
     b = randint(5,30 , size=1)
     tree3 = line(s, c, s-a*i, c+b*i)
@@ -31,6 +37,12 @@ for i in number:
         img[tree4] = 1
     
 for i in number:
+    a = randint(5,30 , size=1)[0]
+    b = randint(5,30 , size=1)[0]
+    tree3 = line(s, r, s-a*i, r-b*i)
+    for k in range(2):     
+        d = randint(5,30 , size=1)[0]
+        e = randint(5,30 , size=1)[0]
     a = randint(5,30 , size=1)
     b = randint(5,30 , size=1)
     tree3 = line(s, r, s-a*i, r-b*i)
