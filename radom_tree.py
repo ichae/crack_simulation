@@ -39,10 +39,8 @@ for i in number:
         tree4 = line(s-a*i, r-b*i,  s-a*i-d, r-b*i-e)
         img[tree3] = 1
         img[tree4] = 1
-  
-   
-    
 
+# Figure  
 plt.imshow(img)
 plt.show()
 

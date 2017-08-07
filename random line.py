@@ -29,11 +29,6 @@ for k in range(10):
     tree2 = line(e,d,a,b)
     img[tree] = 1
     img[tree2] = 1
-    
-
-
-
-
 
 plt.imshow(img)
 plt.show()
