@@ -12,7 +12,6 @@ import matplotlib.pyplot as plt
 
 img = np.zeros((500,500), dtype=np.uint8)
 
-for k in range(10):
     r = randint(0,499 , size=1)[0]
     c = randint(0,499 , size=1)[0]
     a = randint(0,499 , size=1)[0]
