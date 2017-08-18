@@ -4,43 +4,80 @@ import numpy as np
 from numpy.random import randint
 import matplotlib.pyplot as plt
 
-img = np.zeros((150,150), dtype=np.uint8)
-r = randint(50,60 , size=1)[0]
-c = randint(90,100 , size=1)[0]
-s = randint(70,80 , size=1)[0]
-
-#%%
-tree = line(100,75,s,c)
-tree2 = line(100,75,s,r)
-rr,cc = line(149,75,100,75)
+img = np.zeros((200,200), dtype=np.uint32)
+rr,cc = line(199,100,150,100)
 img[rr,cc] = 1
+a = randint(100,120,size=1)[0]
+b = randint(120,130,size=1)[0]
+tree = line(150,100,a,b)
 img[tree] = 1
+c = randint(70,80, size=1)[0]
+tree2 = line(150,100,a,c)
 img[tree2] = 1
 
-number = [1,1]
-for i in number:
-    a = randint(5,30 , size=1)[0]
-    b = randint(5,30 , size=1)[0]
-    tree3 = line(s, c, s-a*i, c+b*i)
-    for k in range(2):
-        d = randint(5,30 , size=1)[0]
-        e = randint(5,30 , size=1)[0]
-        tree4 = line(s-a*i, c+b*i,  s-a*i-d, c+b*i+e)
-        img[tree3] = 1
-        img[tree4] = 1
-    
-for i in number:
-    a = randint(5,30 , size=1)[0]
-    b = randint(5,30 , size=1)[0]
-    tree3 = line(s, r, s-a*i, r-b*i)
-    for k in range(2):     
-        d = randint(5,30 , size=1)[0]
-        e = randint(5,30 , size=1)[0]
-        tree4 = line(s-a*i, r-b*i,  s-a*i-d, r-b*i-e)
-        img[tree3] = 1
-        img[tree4] = 1
-
-# Figure  
+d = randint(-9,9, size=1)[0]
+e = randint(10,35, size=1)[0]
+tree3 = line(a,c,a+d,c-e)
+if e<20:
+    img[tree3] = 0
+else:
+    img[tree3] = 1
+    for i in [-1,1]:    
+        f = randint(19,33, size=1)[0]
+        g = randint(10,34, size=1)[0]
+        tree7 = line(a+d,c-e,a+d+f*i,c-e-g)
+        if g<20:
+            img[tree7] = 0
+        else:
+            img[tree7] = 1
+            
+d = randint(-9,9, size=1)[0]
+e = randint(10,35, size=1)[0]
+tree4 = line(a,c,a-e,c+d)
+if e<20:
+    img[tree4] = 0
+else:
+    img[tree4] = 1
+    for i in [-1,1]:
+        f = randint(19,33, size=1)[0]
+        g = randint(10,34, size=1)[0]
+        tree8 = line(a-e,c+d,a-e-f,c+d+g*i)
+        if g<20:
+            img[tree8] = 0
+        else:
+            img[tree8] = 1
+            
+d = randint(-9,9, size=1)[0]
+e = randint(10,35, size=1)[0]
+tree5 = line(a,b,a+d,b+e)
+if e<20:
+    img[tree5] = 0
+else:
+    img[tree5] = 1
+    for i in [-1,1]:    
+        f = randint(19,33, size=1)[0]
+        g = randint(10,34, size=1)[0]
+        tree9 = line(a+d,b+e,a+d+f*i,b+e+g)
+        if g<20:
+            img[tree9] = 0
+        else:
+            img[tree9] = 1
+            
+d = randint(-9,9, size=1)[0]
+e = randint(10,35, size=1)[0]
+tree6 = line(a,b,a-e,b+d)
+if e<20:
+    img[tree6] = 0
+else:
+    img[tree6] = 1
+    for i in [-1,1]:
+        f = randint(19,33, size=1)[0]
+        g = randint(10,34, size=1)[0]
+        tree10 = line(a-e,b+d,a-e-f,b+d+g*i)
+        if g<20:
+            img[tree10] = 0
+        else:
+            img[tree10] = 1
+            
 plt.imshow(img)
 plt.show()
-
